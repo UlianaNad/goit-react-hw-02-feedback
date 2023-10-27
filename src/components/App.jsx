@@ -40,9 +40,8 @@ class App extends React.Component {
 
   render() {
     const total = this.countTotalFeedback();
-    console.log(total);
     const positivePercentage = this.countPositiveFeedbackPercentage();
-    console.log(positivePercentage);
+
     return (
       <div>
         <h1>Please leave a feedback</h1>
