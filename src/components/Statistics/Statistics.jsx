@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledDiv, StyledSpan } from './Statistics.styled';
+import PropTypes from 'prop-types';
 
 function Statistics({ good, neutral, bad, total, positivePercentage }) {
   return (
@@ -17,3 +18,11 @@ function Statistics({ good, neutral, bad, total, positivePercentage }) {
 }
 
 export default Statistics;
+
+Statistics.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.string.isRequired,
+    bad: PropTypes.string.isRequired,
+    total: PropTypes.string.isRequired,
+    positivePercentage: PropTypes.string.isRequired
+}
