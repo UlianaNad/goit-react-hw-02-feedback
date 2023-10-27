@@ -1,5 +1,6 @@
 import React from 'react';
 import Statistics from './Statistics/Statistics';
+import Notification from './Notification';
 
 class App extends React.Component {
   state = {
@@ -48,7 +49,7 @@ class App extends React.Component {
   countPositiveFeedbackPercentage = () => {
     const { good, total } = this.state;
     if (total > 0) {
-      this.setState({ positivePercentage: (good * 100) / total });
+      this.setState({ positivePercentage: Math.round((good * 100) / total) });
     } else {
       this.setState({ positivePercentage: 0 });
     }
@@ -63,13 +64,17 @@ class App extends React.Component {
         <button onClick={this.countNeutralFeedback}>Neutral</button>
         <button onClick={this.countBadFeedback}>Bad</button>
 
-        <Statistics
+        {(this.state.total === 0) ? (<Notification message="There is no feedback"/>
+          ) : (
+            <Statistics
           good={this.state.good}
           neutral={this.state.neutral}
           bad={this.state.bad}
           total={this.state.total}
           positivePercentage={this.state.positivePercentage}
         />
+        )}
+        
       </div>
     );
   }
