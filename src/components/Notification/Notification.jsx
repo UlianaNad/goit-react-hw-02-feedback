@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { StyledDiv } from './Notification.styled';
 
 function Notification({message}) {
   return (
-    <div>{message}</div>
+    <StyledDiv>{message}</StyledDiv>
   )
 }
 

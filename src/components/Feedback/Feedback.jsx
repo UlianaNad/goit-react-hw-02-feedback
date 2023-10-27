@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyledButton } from './Feedback.styled';
 
 export const Feedback = ({ options, handleFeedbackVote }) => (
   <div>
     {options.map(option => (
-      <button
+      <StyledButton
         type="button"
         onClick={() => handleFeedbackVote(option)}
         key={option}
       >
         {option}
-      </button>
+      </StyledButton>
     ))}
   </div>
 );
