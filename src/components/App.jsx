@@ -11,18 +11,18 @@ class App extends React.Component {
   };
   handleFeedbackVote = feedbackValue => {
     switch (feedbackValue) {
-      case 'good': {
+      case 'good':
         this.setState(prevState => ({ good: prevState.good + 1 }));
         break;
-      }
-      case 'neutral': {
+      case 'neutral':
         this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
         break;
-      }
-      case 'bad': {
+      case 'bad':
         this.setState(prevState => ({ bad: prevState.bad + 1 }));
         break;
-      }
+      default:
+        // Handle default case if necessary
+        break;
     }
   };
   countTotalFeedback = () => {
