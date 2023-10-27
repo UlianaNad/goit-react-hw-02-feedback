@@ -11,6 +11,7 @@ class App extends React.Component {
   };
 
   handleFeedbackVote = feedbackValue => {
+    // eslint-disable-next-line default-case
     switch (feedbackValue) {
       case 'good': {
         this.setState(prevState => ({ good: prevState.good + 1 }));
@@ -25,7 +26,6 @@ class App extends React.Component {
         break;
       }
     }
-  };
 
   countTotalFeedback = () => {
     const { good, bad, neutral } = this.state;
